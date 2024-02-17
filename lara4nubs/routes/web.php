@@ -19,5 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/user/ROOT', [Userscontroller::class, 'getAdminProfile'])-> where (name: 'username', expression: '[A-Z]+');
-Route::get('/user/{username}', [Userscontroller::class, 'getProfile'])-> where (name: 'username', expression: '[A-Z]+');
+Route::get('/user/{username}', [Userscontroller::class, 'getProfile'])-> name(name: 'user-profile');
+Route::get('/test', [Userscontroller::class,'test'] );
 

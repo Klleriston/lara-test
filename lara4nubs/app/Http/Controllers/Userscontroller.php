@@ -16,4 +16,13 @@ class Userscontroller extends Controller
         $username = "KEKZ";
         return "Hello" . PHP_EOL . $username;
     }
+
+    public function test() 
+    {
+        // return response()->json([
+        //     'name' => 'kekz',
+        //     'age' => 20
+        // ], 200);
+        return redirect(route('user-profile', ['username'=> 'KEKZ']));
+    }
 }
