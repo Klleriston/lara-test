@@ -17,12 +17,19 @@ class Userscontroller extends Controller
         return "Hello" . PHP_EOL . $username;
     }
 
-    public function test() 
+    public function test(Request $request) 
     {
         // return response()->json([
         //     'name' => 'kekz',
         //     'age' => 20
         // ], 200);
-        return redirect(route('user-profile', ['username'=> 'KEKZ']));
+        // return redirect(route('user-profile', ['username'=> 'KEKZ']));
+        // dd($request->all()); --> retorna um array
+
+        $this->validate($request, [
+            'name' => 'required',
+            'age' => 'required|numeric'
+        ]);
+
     }
 }
