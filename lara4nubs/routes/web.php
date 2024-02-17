@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Userscontroller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user/{username}', function (string $username) {
-    return view('users', compact('username'));
-})-> where (name: 'username', expression: '[A-Z]+');
+Route::get('/user/ROOT', [Userscontroller::class, 'getAdminProfile'])-> where (name: 'username', expression: '[A-Z]+');
+Route::get('/user/{username}', [Userscontroller::class, 'getProfile'])-> where (name: 'username', expression: '[A-Z]+');
+
