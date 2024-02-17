@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TestRequest;
 use Illuminate\Http\Request;
 
 class Userscontroller extends Controller
@@ -17,7 +18,7 @@ class Userscontroller extends Controller
         return "Hello" . PHP_EOL . $username;
     }
 
-    public function test(Request $request) 
+    public function test(TestRequest $request) //injeção ded dependencia 
     {
         // return response()->json([
         //     'name' => 'kekz',
@@ -25,11 +26,6 @@ class Userscontroller extends Controller
         // ], 200);
         // return redirect(route('user-profile', ['username'=> 'KEKZ']));
         // dd($request->all()); --> retorna um array
-
-        $this->validate($request, [
-            'name' => 'required',
-            'age' => 'required|numeric'
-        ]);
 
     }
 }
