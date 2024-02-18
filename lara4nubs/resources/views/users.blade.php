@@ -9,10 +9,18 @@
 
 <body>
     <marquee behavior="" direction="">
-        <?php
-            echo "Hello" . PHP_EOL . $username
-        ?>
+        {{$username }}
     </marquee>
+
+    @if($username == "KEKZ")
+        <h1>
+            TOME PHPOLA
+        </h1>
+    @elseif($username == "FUU")
+        <h1>
+            sei la porra
+        </h1>
+    @endif
 </body>
 
 </html>
