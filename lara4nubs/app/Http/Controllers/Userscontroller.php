@@ -9,7 +9,8 @@ class Userscontroller extends Controller
 {
     public function getProfile(String $username)
     {
-        return view('users', compact('username'));
+        $characters = ['gojo', 'luffy', 'subaru', 'rudy', 'naruto'];
+        return view('users', compact('username', 'characters'));
     }
 
     public function getAdminProfile(String $username)

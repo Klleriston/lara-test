@@ -21,6 +21,17 @@
             sei la porra
         </h1>
     @endif
+    <table>
+    @foreach($characters as $character)
+    <tr>
+        <td>
+            {{$character}}
+        </td>
+    </tr>
+    @endforeach
+    </table>
+    
+    
 </body>
 
 </html>
